@@ -1,102 +1,40 @@
 # 🧪 Testing Practice
 
-This project is part of **The Odin Project - JavaScript Course**.  
-The goal of this assignment is to practice **Test Driven Development (TDD)** using **Jest** by writing unit tests for simple JavaScript functions.
+This project is part of **The Odin Project - JavaScript Course** and focuses on learning **Test Driven Development (TDD)** using **Jest**.
 
 ---
 
-## 🚀 Project Objective
+## 🚀 Overview
 
-- Learn how to write unit tests using Jest
-- Understand the basics of TDD (Test → Code → Refactor)
-- Practice writing clean, testable JavaScript functions
-- Build confidence in debugging and validating logic
+The goal of this project is to build and test simple JavaScript functions while following the TDD approach:
 
----
-
-## 📚 Concepts Covered
-
-- Unit Testing
-- Test Driven Development (TDD)
-- Jest framework
-- Edge case handling
-- Code modularization
+1. Write tests
+2. Implement functionality
+3. Refactor code
 
 ---
 
-## 🛠️ Functions Implemented
+## 🛠️ Features
 
 The following functions are implemented and tested:
 
-### 1. `capitalize(string)`
+- `capitalize(string)` – Capitalizes the first letter
+- `reverseString(string)` – Reverses a string
+- `calculator` – Includes add, subtract, multiply, divide
+- `caesarCipher(string, shift)` – Encrypts text with shift logic
+- `analyzeArray(array)` – Returns average, min, max, length
 
-- Returns the input string with the first letter capitalized
-
-### 2. `reverseString(string)`
-
-- Returns the reversed version of the input string
-
-### 3. `calculator`
-
-Object containing:
-
-- `add(a, b)`
-- `subtract(a, b)`
-- `multiply(a, b)`
-- `divide(a, b)`
-
-### 4. `caesarCipher(string, shift)`
-
-- Shifts each character by a given number
-- Preserves case
-- Handles punctuation and spaces
-
-### 5. `analyzeArray(array)`
-
-Returns an object with:
-
-- `average`
-- `min`
-- `max`
-- `length`
+All functions are implemented in a single file and tested separately.
 
 ---
 
-## 🧪 Testing
+## 📁 Project Structure
 
-All functions are tested using **Jest**.
-
-### Run Tests
-
-```bash
-npm test
-```
-
-### Watch Mode
-
-```bash
-npm test -- --watch
-```
-
-### Project Structure
-
-```bash
+````bash
 testing-practice/
-│
-├── src/
-│ ├── capitalize.js
-│ ├── reverseString.js
-│ ├── calculator.js
-│ ├── caesarCipher.js
-│ └── analyzeArray.js
-│
-├── tests/
-│ ├── capitalize.test.js
-│ ├── reverseString.test.js
-│ ├── calculator.test.js
-│ ├── caesarCipher.test.js
-│ └── analyzeArray.test.js
-│
+├── common-functions.js
+├── common-functions.test.js
 ├── package.json
 └── README.md
-```
+```bash
+````
