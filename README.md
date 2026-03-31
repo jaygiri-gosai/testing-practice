@@ -80,6 +80,7 @@ npm test -- --watch
 
 ### Project Structure
 
+```bash
 testing-practice/
 │
 ├── src/
@@ -98,3 +99,4 @@ testing-practice/
 │
 ├── package.json
 └── README.md
+```
