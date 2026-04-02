@@ -50,3 +50,54 @@ test("Take a string and shift by given number", () => {
   expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
   expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
 });
+
+const fetchUser = jest.fn(() => "Real User");
+const add = jest.fn(() => 10);
+
+test("Mock function returns fixed value", () => {
+  expect(fetchUser()).toBe("Real User");
+  expect(add(5, 5)).toBe(10);
+});
+
+test("should track calls", () => {
+  fetchUser();
+  expect(fetchUser).toHaveBeenCalledTimes(2);
+  expect(fetchUser).toHaveBeenCalledWith();
+});
+
+function greetUser(fetchFn) {
+  return `Hello, ${fetchFn()}`;
+}
+
+test("Use mock function", () => {
+  const mockFetch = jest.fn(() => "Jay");
+  const result = greetUser(mockFetch);
+  expect(result).toBe("Hello, Jay");
+});
+
+const mockFn = jest.fn();
+
+mockFn.mockReturnValueOnce("First");
+mockFn.mockReturnValueOnce("Second");
+
+test("returns different value", () => {
+  expect(mockFn()).toBe("First");
+  expect(mockFn()).toBe("Second");
+});
+
+function processOrder(mockUser, mockTotal) {
+  const user = mockUser();
+  const total = mockTotal();
+  return `${user} ordered items worth ${total}`;
+}
+const getUser = jest.fn(() => "Jay");
+const calculateTotal = jest.fn(() => 10);
+
+test("test order processing", () => {
+  const result = processOrder(getUser, calculateTotal);
+
+  expect(result).toBe("Jay ordered items worth 10");
+
+  expect(getUser).toHaveBeenCalledTimes(1);
+  expect(calculateTotal).toHaveBeenCalledTimes(1);
+});

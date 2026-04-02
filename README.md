@@ -26,6 +26,8 @@ The following functions are implemented and tested:
 
 All functions are implemented in a single file and tested separately.
 
+Additionally, practice JEST Mocking.
+
 ---
 
 ## 📁 Project Structure
